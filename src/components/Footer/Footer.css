@@ -1,0 +1,20 @@
+.footer{
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(7, 243, 113);
+}
+.footerp:hover{
+    color: rgb(246, 248, 248);
+
+}
+
+.footerc{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+@media only screen and (max-width: 688px){
+    .footerc{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
