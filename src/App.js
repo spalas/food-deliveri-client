@@ -17,6 +17,7 @@ import Delivery from './components/Delivery/Delivery';
 import Login from './components/Login/Login';
 import SingleItem from './components/SingleItem/SingleItem';
 import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -47,10 +48,10 @@ function App() {
               <Delivery></Delivery>
 
             </Route>
-            <Route exact path="/singleitem/:serviceId">
+            <PrivateRoute exact path="/singleitem/:serviceId">
               <SingleItem></SingleItem>
 
-            </Route>
+            </PrivateRoute>
             <Route exact path="/login">
               <Login></Login>
 

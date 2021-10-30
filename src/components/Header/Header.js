@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './Header.css'
 
@@ -30,12 +30,14 @@ const Header = () => {
                                 <Link className="item" to="/delivery">Delivery</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                {
-                                    user?.email ?
-                                        <Link className="item" to="/login">Login</Link> :
-                                        <button type="button" class="btn btn-primary">Log Out</button>
+
+                                {user?.email ?
+                                    <button onClick={logOut} type="button" className="btn btn-primary">Log Out</button> :
+                                    <NavLink className="item" to="/login">Login</NavLink>
 
                                 }
+
+
                             </li>
                             <li className="nav-item mx-3">
                                 <Link className="item" to="/login">{user?.displayName}</Link>
