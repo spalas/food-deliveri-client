@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import cars from '../../images/images/carsul/carsul1.png'
 import cars1 from '../../images/images/carsul/carsul2.png'
 import cars2 from '../../images/images/carsul/carsul3.png'
 import Process from '../Process/Process';
+import ServiceContent from '../ServiceContent/ServiceContent';
 import Team from '../Team/Team';
 
 const Services = () => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/items')
+            .then(res => res.json())
+            .then(data => setItems(data))
+    }, [])
+
+
+
+
+
     return (
         <div>
             <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -48,6 +61,43 @@ const Services = () => {
 
 
             </div>
+
+
+            <div className="my-5">
+                <h1>Our Services</h1>
+                <h6> This our core band services</h6>
+            </div>
+
+
+            <div className="container">
+                <div className="row">
+                    {
+                        items.map((item => <ServiceContent key={item.id}
+                            item={item}></ServiceContent>
+
+
+
+
+
+                        ))
+                    }
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
             <Process></Process>
             <Team></Team>
 
