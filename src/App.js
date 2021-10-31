@@ -44,9 +44,8 @@ function App() {
               <Contact></Contact>
 
             </Route>
-            <Route exact path="/delivery">
+            <Route exact path="/addService">
               <Delivery></Delivery>
-
             </Route>
             <PrivateRoute exact path="/singleitem/:serviceId">
               <SingleItem></SingleItem>

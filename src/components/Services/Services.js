@@ -72,7 +72,7 @@ const Services = () => {
             <div className="container">
                 <div className="row">
                     {
-                        items.map((item => <ServiceContent key={item.id}
+                        items.map((item => <ServiceContent key={item._id}
                             item={item}></ServiceContent>
 
 

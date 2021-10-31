@@ -1,0 +1,12 @@
+.delivery-service form{
+    display: flex;
+    flex-direction: column;
+    /* width: 50%; */
+    justify-content: center;
+    align-items: center;
+}
+.delivery-service input, textarea{
+    width: 40%;
+    margin-bottom: 15px;
+
+}
