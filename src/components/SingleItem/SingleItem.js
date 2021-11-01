@@ -6,7 +6,7 @@ const SingleItem = () => {
     const { serviceId } = useParams()
     const [item, setItem] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/items/${serviceId}`)
+        fetch(`https://secret-citadel-35045.herokuapp.com/items/${serviceId}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [])
